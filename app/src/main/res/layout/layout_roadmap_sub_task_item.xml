@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingVertical="8dp"
+    android:paddingStart="4dp"
+    android:gravity="center_vertical">
+
+    <View
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@drawable/glass_circle_premium"
+        android:backgroundTint="@color/accent_cyan"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/tvSubTask"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sub-treatment task description"
+        android:textColor="#E0F2F1"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-medium"
+        android:alpha="0.9" />
+
+</LinearLayout>

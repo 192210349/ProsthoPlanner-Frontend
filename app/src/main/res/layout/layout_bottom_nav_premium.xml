@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    app:cardElevation="16dp"
+    app:cardCornerRadius="0dp"
+    app:cardBackgroundColor="@color/white"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="8dp"
+        android:background="@color/white">
+
+        <!-- Home -->
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/ivNavHome"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/text_light" />
+            <TextView
+                android:id="@+id/tvNavHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Home"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_light" />
+        </LinearLayout>
+
+        <!-- Patients -->
+        <LinearLayout
+            android:id="@+id/navPatients"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/ivNavPatients"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_patients"
+                app:tint="@color/text_light" />
+            <TextView
+                android:id="@+id/tvNavPatients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Patients"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_light" />
+        </LinearLayout>
+
+
+        <!-- Analytics -->
+        <LinearLayout
+            android:id="@+id/navAnalytics"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/ivNavAnalytics"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_analytics"
+                app:tint="@color/text_light" />
+            <TextView
+                android:id="@+id/tvNavAnalytics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Analytics"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_light" />
+        </LinearLayout>
+
+        <!-- Profile -->
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/ivNavProfile"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@drawable/ic_profile_circle"
+                app:tint="@color/text_light" />
+            <TextView
+                android:id="@+id/tvNavProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Profile"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_light" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

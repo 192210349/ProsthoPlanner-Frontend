@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background_gradient">
+
+    <!-- Premium Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerInvestigations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBackInvestigations"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            app:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitleInv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Case"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.02"
+            app:layout_constraintBottom_toBottomOf="@id/btnBackInvestigations"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBackInvestigations" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Premium Step Indicator Area -->
+    <LinearLayout
+        android:id="@+id/indicatorContainerInv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/glass_card_premium"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/headerInvestigations">
+        <include
+            android:id="@+id/stepIndicatorInv"
+            layout="@layout/layout_step_indicator" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollInvestigations"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/bottomActionsInv"
+        app:layout_constraintTop_toBottomOf="@id/indicatorContainerInv">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="32dp">
+
+            <TextView
+                android:id="@+id/tvInvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blood Investigations"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.01" />
+
+            <TextView
+                android:id="@+id/tvInvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Enter patient lab results for assessment."
+                android:textColor="#E0F2F1"
+                android:textSize="15sp"
+                android:alpha="0.8" />
+
+            <!-- Main Form Card -->
+            <LinearLayout
+                android:id="@+id/formCardInv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/glass_card_premium"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:elevation="8dp">
+
+                <GridLayout
+                    android:id="@+id/gridInvestigations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2"
+                    android:useDefaultMargins="false">
+
+                    <!-- Hb Row -->
+                    <LinearLayout android:id="@+id/rowHb" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginEnd="8dp" android:orientation="vertical">
+                        <TextView android:id="@+id/lblHb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HEMOGLOBIN (Hb)" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:background="@drawable/glass_edittext_bg" android:gravity="center_vertical" android:paddingHorizontal="16dp">
+                            <EditText android:id="@+id/etHb" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@null" android:hint="Value" android:inputType="numberDecimal" android:textColor="@color/white" android:textColorHint="#80FFFFFF" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="g/dL" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Sugar Row -->
+                    <LinearLayout android:id="@+id/rowSugar" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginStart="8dp" android:orientation="vertical">
+                        <TextView android:id="@+id/lblSugar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BLOOD SUGAR" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:background="@drawable/glass_edittext_bg" android:gravity="center_vertical" android:paddingHorizontal="16dp">
+                            <EditText android:id="@+id/etBloodSugar" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@null" android:hint="Value" android:inputType="numberDecimal" android:textColor="@color/white" android:textColorHint="#80FFFFFF" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="mg/dL" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- HbA1c Row -->
+                    <LinearLayout android:id="@+id/rowHbA1c" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginEnd="8dp" android:layout_marginTop="24dp" android:orientation="vertical">
+                        <TextView android:id="@+id/lblHbA1c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HbA1c" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:background="@drawable/glass_edittext_bg" android:gravity="center_vertical" android:paddingHorizontal="16dp">
+                            <EditText android:id="@+id/etHbA1c" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@null" android:hint="Value" android:inputType="numberDecimal" android:textColor="@color/white" android:textColorHint="#80FFFFFF" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="%" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Bleeding Row -->
+                    <LinearLayout android:id="@+id/rowBleeding" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginStart="8dp" android:layout_marginTop="24dp" android:orientation="vertical">
+                        <TextView android:id="@+id/lblBleeding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BLEEDING TIME" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:background="@drawable/glass_edittext_bg" android:gravity="center_vertical" android:paddingHorizontal="16dp">
+                            <EditText android:id="@+id/etBleedingTime" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@null" android:hint="Min" android:inputType="numberDecimal" android:textColor="@color/white" android:textColorHint="#80FFFFFF" android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Clotting Row -->
+                    <LinearLayout android:id="@+id/rowClotting" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:layout_marginEnd="8dp" android:layout_marginTop="24dp" android:orientation="vertical">
+                        <TextView android:id="@+id/lblClotting" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="CLOTTING TIME" android:textColor="@color/accent_cyan" android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.08" android:layout_marginBottom="8dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="64dp" android:background="@drawable/glass_edittext_bg" android:gravity="center_vertical" android:paddingHorizontal="16dp">
+                            <EditText android:id="@+id/etClottingTime" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="@null" android:hint="Min" android:inputType="numberDecimal" android:textColor="@color/white" android:textColorHint="#80FFFFFF" android:textSize="15sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </GridLayout>
+
+                <TextView
+                    android:id="@+id/lblLabNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="ADDITIONAL LAB NOTES"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+                
+                <EditText
+                    android:id="@+id/etLabNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/glass_edittext_bg"
+                    android:gravity="top"
+                    android:hint="Enter any other relevant lab values or notes..."
+                    android:inputType="textMultiLine"
+                    android:padding="16dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Actions -->
+    <LinearLayout
+        android:id="@+id/bottomActionsInv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp"
+        android:background="#1AFFFFFF"
+        android:elevation="24dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnBackInvStep"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/glass_edittext_bg"
+            android:text="Back"
+            android:textAllCaps="true"
+            android:textColor="#B0BEC5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btnNextInv"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1.6"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/btn_login_premium"
+            android:text="Next Step"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            android:elevation="8dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

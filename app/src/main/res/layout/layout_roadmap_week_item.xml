@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/glass_card_selectable"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="20dp"
+    android:elevation="4dp">
+
+    <CheckBox
+        android:id="@+id/cbWeekComplete"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:buttonTint="@color/accent_cyan"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llWeekContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/tvStatusTag"
+        app:layout_constraintStart_toEndOf="@id/cbWeekComplete"
+        app:layout_constraintTop_toTopOf="parent">
+        
+        <TextView
+            android:id="@+id/tvWeekTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week 1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-black" />
+            
+        <TextView
+            android:id="@+id/tvWeekTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="CLINICAL PHASE"
+            android:textColor="@color/accent_cyan"
+            android:textSize="11sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.05" />
+
+        <LinearLayout
+            android:id="@+id/llSubTasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatusTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pending"
+        android:textColor="#E0F2F1"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-black"
+        android:background="#1AFFFFFF"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

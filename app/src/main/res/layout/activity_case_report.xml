@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_premium_gradient"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/text_dark" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clinical Case Report"
+            style="@style/TextTitleMedium"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/footer"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
+
+            <!-- Report Sheet -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="40dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32dp">
+
+                    <!-- Hospital Brand -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_single_tooth"
+                            app:tint="@color/primary_teal" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SIMATS DENTAL CLINICS"
+                                android:textColor="@color/primary_teal"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:letterSpacing="0.05" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Advanced AI Diagnostic Hub"
+                                android:textColor="@color/text_grey"
+                                android:textSize="10sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="24dp"
+                        android:background="#EEEEEE" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="Clinical Summary"
+                        style="@style/TextTitleLarge"
+                        android:textSize="22sp" />
+
+                    <!-- Meta Data -->
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:columnCount="2">
+                        <LinearLayout android:orientation="vertical" android:layout_columnWeight="1" android:layout_marginEnd="8dp">
+                            <TextView android:text="PATIENT NAME" style="@style/TextLabelSmall" android:textColor="@color/text_grey" />
+                            <TextView android:text="John Doe" style="@style/TextTitleMedium" android:textSize="15sp" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:layout_columnWeight="1">
+                            <TextView android:text="GENERATED" style="@style/TextLabelSmall" android:textColor="@color/text_grey" />
+                            <TextView android:text="Oct 24, 2023" style="@style/TextTitleMedium" android:textSize="15sp" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:layout_columnWeight="1" android:layout_marginTop="20dp">
+                            <TextView android:text="CASE REFERENCE" style="@style/TextLabelSmall" android:textColor="@color/text_grey" />
+                            <TextView android:text="#PP-24129" style="@style/TextTitleMedium" android:textSize="15sp" />
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:layout_columnWeight="1" android:layout_marginTop="20dp">
+                            <TextView android:text="ACCURACY" style="@style/TextLabelSmall" android:textColor="@color/text_grey" />
+                            <TextView android:text="98.4% AI Match" android:textColor="@color/success_green" style="@style/TextTitleMedium" android:textSize="15sp" />
+                        </LinearLayout>
+                    </GridLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="32dp"
+                        android:background="#EEEEEE" />
+
+                    <!-- AI Findings Section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DIAGNOSTIC FINDINGS"
+                        style="@style/TextLabelSmall"
+                        android:textColor="@color/primary_teal"
+                        android:letterSpacing="0.1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="• Bone Height: 14.52mm (Optimal)\n• Bone Density: D2 (High Density)\n• Nerve Clearance: 4.8mm (Safe Margin)\n• Primary Stability: Estimated 35-40 Ncm"
+                        android:textColor="@color/text_dark"
+                        android:lineSpacingExtra="10dp"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="32dp"
+                        android:background="#EEEEEE" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TREATMENT STATUS"
+                        style="@style/TextLabelSmall"
+                        android:textColor="@color/primary_teal"
+                        android:letterSpacing="0.1" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Clinical planning stage finalized successfully. All procedure parameters have been validated by the ProsthoPlanner AI Engine and are ready for the surgical phase."
+                        android:textColor="@color/text_dark"
+                        android:lineSpacingExtra="8dp"
+                        android:textSize="14sp" />
+
+                    <!-- Signatures -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                             <View android:layout_width="100dp" android:layout_height="1dp" android:background="#CCCCCC" />
+                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Consultant Clinician" style="@style/TextLabelSmall" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                             <View android:layout_width="100dp" android:layout_height="1dp" android:background="#CCCCCC" />
+                             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="AI Verified Digital Seal" style="@style/TextLabelSmall" android:textColor="@color/primary_teal" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDownload"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="Download PDF"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textAllCaps="false"
+            android:textColor="@color/primary_teal"
+            app:strokeColor="@color/primary_teal"
+            app:cornerRadius="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnShare"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="Send to Patient"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/primary_teal"
+            app:cornerRadius="16dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

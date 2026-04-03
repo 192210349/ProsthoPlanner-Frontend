@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background_gradient"
+    android:fitsSystemWindows="true">
+
+    <!-- Premium Header Area -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerPlan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingHorizontal="24dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/glass_circle_premium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Treatment Plan"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.02"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollPlan"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavPlan"
+        app:layout_constraintTop_toBottomOf="@id/headerPlan">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="32dp">
+
+            <!-- Elite Overview Card -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/overviewCardPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/glass_card_premium"
+                android:padding="28dp"
+                android:elevation="8dp">
+
+                <TextView
+                    android:id="@+id/tvPatientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John Doe"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:fontFamily="sans-serif-black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTreatmentType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="FLEXIBLE ESTHETIC RPD"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1"
+                    app:layout_constraintTop_toBottomOf="@id/tvPatientName"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <View
+                    android:id="@+id/dividerPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="#1AFFFFFF"
+                    app:layout_constraintTop_toBottomOf="@id/tvTreatmentType" />
+
+                <LinearLayout
+                    android:id="@+id/metricsPlan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/dividerPlan">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="EST. DURATION"
+                            android:textColor="#99E0F2F1"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.08" />
+                        <TextView
+                            android:id="@+id/tvPlanDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="12 Weeks"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-black" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CURRENT STATUS"
+                            android:textColor="#99E0F2F1"
+                            android:textSize="10sp"
+                            android:fontFamily="sans-serif-black"
+                            android:letterSpacing="0.08" />
+                        <TextView
+                            android:id="@+id/tvPlanStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="In Progress"
+                            android:textColor="#FBBF24"
+                            android:textSize="16sp"
+                            android:fontFamily="sans-serif-black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProgressLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="SURGICAL PRECISION PROGRESS"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-black"
+                    android:letterSpacing="0.1"
+                    app:layout_constraintTop_toBottomOf="@id/metricsPlan"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="16dp"
+                    android:progress="65"
+                    android:progressDrawable="@drawable/progress_premium"
+                    app:layout_constraintTop_toBottomOf="@id/tvProgressLabel" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/progressBar">
+                    <TextView
+                        android:id="@+id/tvProgressDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="2 of 3 phases complete"
+                        android:textColor="#CCF2F2F2"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium" />
+                    <TextView
+                        android:id="@+id/tvProgressPercentage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="65%"
+                        android:textColor="@color/accent_cyan"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-black" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Clinical Roadmap Timeline -->
+            <TextView
+                android:id="@+id/tvRoadmapTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="CLINICAL ROADMAP"
+                android:textColor="@color/accent_cyan"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.12" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/roadmapCardPlan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/glass_card_premium"
+                android:padding="28dp"
+                android:elevation="4dp">
+
+                <!-- Phase 1: Completed -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/phase1Node"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/glass_circle_premium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_check"
+                        app:tint="#10B981" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/phase1Node"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/phase1Node"
+                    app:layout_constraintTop_toTopOf="@id/phase1Node">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phase 1: Diagnostic"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Imaging &amp; Bone Analysis complete"
+                        android:textColor="#99E0F2F1"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/linePhase1"
+                    android:layout_width="2dp"
+                    android:layout_height="32dp"
+                    android:background="#10B981"
+                    app:layout_constraintStart_toStartOf="@id/phase1Node"
+                    app:layout_constraintEnd_toEndOf="@id/phase1Node"
+                    app:layout_constraintTop_toBottomOf="@id/phase1Node" />
+
+                <!-- Phase 2: Active -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/phase2Node"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/glass_circle_premium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linePhase1">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_analytics"
+                        app:tint="@color/accent_cyan" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/phase2Node"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/phase2Node"
+                    app:layout_constraintTop_toTopOf="@id/phase2Node">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phase 2: Surgical Planning"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="AI Simulation in progress"
+                        android:textColor="@color/accent_cyan"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-black" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/linePhase2"
+                    android:layout_width="2dp"
+                    android:layout_height="32dp"
+                    android:background="#33FFFFFF"
+                    app:layout_constraintStart_toStartOf="@id/phase2Node"
+                    app:layout_constraintEnd_toEndOf="@id/phase2Node"
+                    app:layout_constraintTop_toBottomOf="@id/phase2Node" />
+
+                <!-- Phase 3: Locked -->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/phase3Node"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/glass_circle_premium"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linePhase2">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_implant"
+                        app:tint="#4DFFFFFF" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/phase3Node"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/phase3Node"
+                    app:layout_constraintTop_toTopOf="@id/phase3Node">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phase 3: Prosthetic"
+                        android:textColor="#4DFFFFFF"
+                        android:textSize="15sp"
+                        android:fontFamily="sans-serif-black" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="Awaiting surgical completion"
+                        android:textColor="#4DFFFFFF"
+                        android:textSize="12sp"
+                        android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Bottom CTA Button -->
+            <Button
+                android:id="@+id/btnViewRoadmap"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/btn_login_premium"
+                android:text="Adjust Treatment Parameters"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                android:elevation="8dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <include
+        android:id="@+id/bottomNavPlan"
+        layout="@layout/layout_bottom_nav_premium"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

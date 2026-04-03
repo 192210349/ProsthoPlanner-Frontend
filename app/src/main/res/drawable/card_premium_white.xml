@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Subtle Shadow -->
+    <item>
+        <shape>
+            <solid android:color="#0D000000" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+    <!-- Main Card Body -->
+    <item android:bottom="2dp">
+        <shape>
+            <solid android:color="@color/white" />
+            <corners android:radius="24dp" />
+            <stroke android:width="1.5dp" android:color="@color/card_border" />
+        </shape>
+    </item>
+</layer-list>

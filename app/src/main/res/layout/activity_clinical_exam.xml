@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background_gradient">
+
+    <!-- Premium Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerClinical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="56dp"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBackClinical"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:padding="12dp"
+            android:scaleType="centerInside"
+            app:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHeaderTitleClinical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Case"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-black"
+            android:letterSpacing="0.02"
+            app:layout_constraintBottom_toBottomOf="@id/btnBackClinical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBackClinical" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Premium Step Indicator Area -->
+    <LinearLayout
+        android:id="@+id/indicatorContainerClinical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/glass_card_premium"
+        android:elevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/headerClinical">
+        <include
+            android:id="@+id/stepIndicatorClinical"
+            layout="@layout/layout_step_indicator" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollClinical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@id/bottomActionsClinical"
+        app:layout_constraintTop_toBottomOf="@id/indicatorContainerClinical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="40dp">
+
+            <TextView
+                android:id="@+id/tvClinicalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clinical Examination"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="0.01" />
+
+            <TextView
+                android:id="@+id/tvClinicalSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Document prosthodontic and tissue findings."
+                android:textColor="#E0F2F1"
+                android:textSize="15sp"
+                android:alpha="0.8" />
+
+            <!-- Main Form Card -->
+            <LinearLayout
+                android:id="@+id/formCardClinical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/glass_card_premium"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:elevation="8dp">
+
+                <!-- Edentulous Area -->
+                <TextView
+                    android:id="@+id/lblEdentulous"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EDENTULOUS AREA"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/etEdentulousArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/glass_edittext_bg"
+                    android:paddingHorizontal="20dp"
+                    android:hint="Specify edentulous area..."
+                    android:textColor="@color/white"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="15sp"
+                    android:inputType="text" />
+
+                <!-- Kennedy Classification -->
+                <TextView
+                    android:id="@+id/lblKennedy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="KENNEDY CLASSIFICATION"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+                <Spinner
+                    android:id="@+id/spinnerKennedy"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/glass_edittext_bg"
+                    android:paddingHorizontal="12dp"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Tissue Condition -->
+                <TextView
+                    android:id="@+id/lblTissue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="TISSUE CONDITION"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+                <Spinner
+                    android:id="@+id/spinnerTissue"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/glass_edittext_bg"
+                    android:paddingHorizontal="12dp"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Occlusion Type -->
+                <TextView
+                    android:id="@+id/lblOcclusion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="OCCLUSION TYPE"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+                <Spinner
+                    android:id="@+id/spinnerOcclusion"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/glass_edittext_bg"
+                    android:paddingHorizontal="12dp"
+                    android:overlapAnchor="false"
+                    android:spinnerMode="dropdown" />
+
+                <!-- Clinical Notes -->
+                <TextView
+                    android:id="@+id/lblClinicalNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="ADDITIONAL CLINICAL NOTES"
+                    android:textColor="@color/accent_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08"
+                    android:layout_marginBottom="8dp" />
+                <EditText
+                    android:id="@+id/etClinicalNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:background="@drawable/glass_edittext_bg"
+                    android:gravity="top"
+                    android:hint="Document extra findings..."
+                    android:inputType="textMultiLine"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#80FFFFFF"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Actions -->
+    <LinearLayout
+        android:id="@+id/bottomActionsClinical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp"
+        android:background="#1AFFFFFF"
+        android:elevation="24dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnBackClinicalStep"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/glass_edittext_bg"
+            android:text="Previous"
+            android:textAllCaps="true"
+            android:textColor="#B0BEC5"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btnCompleteAnalysis"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_weight="1.6"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/btn_login_premium"
+            android:text="Complete Analysis"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            android:elevation="8dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

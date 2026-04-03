@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qualifications">
+        <item>BDS</item>
+        <item>MDS</item>
+        <item>Ph.D. in Dentistry</item>
+        <item>Diploma in Implantology</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="specializations">
+        <item>Prosthodontics</item>
+        <item>Orthodontics</item>
+        <item>Periodontics</item>
+        <item>Endodontics</item>
+        <item>Oral Surgery</item>
+        <item>Pediatric Dentistry</item>
+        <item>General Dentistry</item>
+    </string-array>
+
+    <string-array name="years_of_experience">
+        <item>1-5 Years</item>
+        <item>5-10 Years</item>
+        <item>10-15 Years</item>
+        <item>15-20 Years</item>
+        <item>20+ Years</item>
+    </string-array>
+</resources>

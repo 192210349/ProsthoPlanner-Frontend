@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Checked State -->
+    <item android:color="#3322D3EE" android:state_checked="true" /> <!-- 20% accent_cyan -->
+    <!-- Default State -->
+    <item android:color="#0DFFFFFF" /> <!-- 5% white glass -->
+</selector>
